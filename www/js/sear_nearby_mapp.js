@@ -181,7 +181,7 @@ $(".imoud").click(function(){
    $('#popupPhotoPortrait').popup('open');
 var element = $(this);
 var img_id = element.attr("id");
-var imz='<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" style="background-color:#BC3217;width:50px;height: 50px;">Close</a><img src="http://staging.eimpressive.com/slim/slim-heart-mergedb/uploads/'+img_id+'" alt="Photo portrait" class="">'
+var imz='<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" style="background-color:#BC3217;width:50px;height: 50px;">Close</a><img src="http://staging.eimpressive.com/cardio/uploads/'+img_id+'" alt="Photo portrait" class="">'
 
 $('.imj').append(imz);
 });
