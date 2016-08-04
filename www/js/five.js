@@ -1,8 +1,19 @@
 // JavaScript Document
 
 	//$(document).one('pagecreate', '#page_five', function(){  
-		$(document).one('pagecreate', '#question_li', function(){ 
+		$(document).one('pageshow', '#question_li', function(){ 
 	
+/*	userobject_lastid =  JSON.parse(sessionStorage.getItem("userobject_lastid"));
+			
+if (userobject_lastid !== null){
+
+	if (userobject_lastid != ""){
+		alert(userobject_lastid +'userobject_lastid');
+		$.mobile.changePage($('#sear_nearby_mapp'), { transition: "none", changeHash: true, reverse: false });
+		return false;		
+	
+	}
+}*/
 			//alert('five 5555555555');
            // $("#page_five").live('pageinit', function() {
 				assignValues();

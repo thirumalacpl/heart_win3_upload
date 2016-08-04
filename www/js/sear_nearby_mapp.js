@@ -10,6 +10,12 @@ $('.ajax-upload-dragdrop').empty();
 $('.upload-statusbar').empty();
 $('#status').empty();
 
+/*$(document).off('click','#homebacfromupload').on('click','#homebacfromupload',function(){
+	sessionStorage.clear();
+	
+$.mobile.changepage($('#pageone'),{transition:"none", changeHash: true, reverse: false});
+return false;
+});*/
 for(a=0;a<patient_detaias_array.length;a++){
 
   patient_detaias_arrayaa = patient_detaias_array[a];
@@ -170,6 +176,7 @@ var imag_id=activity_lok_obj.patient_obs_id;
 //alert(imag+'imag');
 if(imag_id == pat_id ){
 //var chatr='<a class="imoud" id="'+activity_lok_obj.document_name+'"><img src="http://staging.eimpressive.com/cardio/uploads/'+activity_lok_obj.document_name+'" class="img_display_doc" alt="" ></a> '
+//var chatr='<div class="ui-grid-solo"><div class="ui-block-a"><a href="" class="imoud" id="'+activity_lok_obj.document_name+'"><img src="http://staging.eimpressive.com/cardio/uploads/'+activity_lok_obj.document_name+'" class="img_display_doc" alt="" ></a><a href="#"  class="delete_iop" id="'+activity_lok_obj.document_id+'"><img src="images/primary/delete_icon1.png"  class="img_delete_icon" alt="" ></a></div> </div> '
 var chatr='<div class="ui-grid-solo"><div class="ui-block-a"><a href="" class="imoud" id="'+activity_lok_obj.document_name+'"><img src="http://staging.eimpressive.com/cardio/uploads/'+activity_lok_obj.document_name+'" class="img_display_doc" alt="" ></a><a href="#"  class="delete_iop" id="'+activity_lok_obj.document_id+'"><img src="images/primary/delete_icon1.png"  class="img_delete_icon" alt="" ></a></div> </div> '
 
 $('#chatr').append(chatr);
@@ -184,6 +191,61 @@ var img_id = element.attr("id");
 var imz='<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" style="background-color:#BC3217;width:50px;height: 50px;">Close</a><img src="http://staging.eimpressive.com/cardio/uploads/'+img_id+'" alt="Photo portrait" class="">'
 
 $('.imj').append(imz);
+});
+$(".delete_iop").click(function(){
+var element = $(this);
+var del_id = element.attr("id");
+//alert(del_id+'del_id');
+if(confirm("Are you sure you want to delete this?")){
+$.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+  options.async = true;
+});
+
+var formData = $("#callAjaxForm").serialize();
+//alert('drop button value insert 84 85');
+$.ajax({
+  type: "POST",
+  url: "http://staging.eimpressive.com/slim/slim-heart-mergedb/delete_iop.php?del_id="+del_id,
+  data: formData,
+  success: onSuccesss,
+  async: 'true',
+  crossDomain: true,
+  dataType: 'json',
+  error: onErrorrr
+});
+function onErrorrr(data, status)
+{
+alert("Network error ins ddddd");
+
+}  
+function onSuccesss(data, status)
+{
+	alert('Document deleted successfully');
+		  sessionStorage.setItem("ret_mage",JSON.stringify(data));
+	  ret_array =  JSON.parse(sessionStorage.getItem("ret_mage"));
+
+if(ret_array != null){
+$('#chatr').empty();
+for(a=0;a<ret_array.length;a++){
+
+  activity_lok_obj = ret_array[a];
+
+var imag=activity_lok_obj.document_name;
+//alert(imag+'imag');
+
+var imag_id=activity_lok_obj.patient_obs_id;
+//alert(imag+'imag');
+if(imag_id == pat_id ){
+//var chatr='<a class="imoud" id="'+activity_lok_obj.document_name+'"><img src="http://staging.eimpressive.com/cardio/uploads/'+activity_lok_obj.document_name+'" class="img_display_doc" alt="" ></a> '
+var chatr='<div class="ui-grid-solo"><div class="ui-block-a"><a href="" class="imoud" id="'+activity_lok_obj.document_name+'"><img src="http://staging.eimpressive.com/cardio/uploads/'+activity_lok_obj.document_name+'" class="img_display_doc" alt="" ></a><a href="#"  class="delete_iop" id="'+activity_lok_obj.document_id+'"><img src="images/primary/delete_icon1.png"  class="img_delete_icon" alt="" ></a></div> </div> '
+
+$('#chatr').append(chatr);
+}
+}
+}
+	}
+}
+
 });
 }
 }
