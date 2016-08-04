@@ -20,6 +20,7 @@
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 <!-- <script src="js/jquery.min.js"></script> -->
 
+  <link rel="stylesheet" href="css/heart.css" />
 
 <style type="text/css">
 
@@ -317,17 +318,23 @@
 
 
  <div data-role="page" id="sear_nearby_mapp" >
-<!-- <script type="text/javascript" src="js/question.js"></script> -->
+<script type="text/javascript" src="js/sear_nearby_mapp.js"></script>
 <!-- <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"> -->
 <!-- <link rel="stylesheet" href="css/my.css"> -->
+    <link href="css/uploadfilemulti.css" rel="stylesheet">
+<script src="js/jquery.fileuploadmulti.min.js"></script>
 <script src="js/jquery.mobile-1.4.5.js"></script>
-<script type="text/javascript">
-  document.addEventListener("backbutton", onBackKeyDown, false);
-function onBackKeyDown(e) {
-  alert('backbutton');
-  e.preventDefault();
+<style type="text/css">
+   div.upload {
+     width: 50px !important;
+    height: 50px !important;
+    background: url(../www/images/primary/qwe.png);
+    /* background-color: red; */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
 }
-</script>
+</style>
 <!-- <script src="js/map.js"></script> -->
 			<!-- <nd2-include data-src=".//examples/fragments/panel.left.html"></nd2-include> -->
 
@@ -350,10 +357,37 @@ function onBackKeyDown(e) {
       <option value="restaurant">Restaurant</option>
     </select>
 <button id="searchbutton" class="ui-btn" onclick="Myfunc()">Search</button> -->
+
+<div id="chatr">
+
+</div>
+<!-- <div data-role="popup" id="positionWindowa" class="ui-content imj" >
+<div class="">
+  
+</div>
+</div> -->
+<div data-role="popup" id="popupPhotoPortrait" class="photopopup imj " data-overlay-theme="a" data-corners="false" data-tolerance="30,15">
+</div>
+<!-- <a href="#positionWindowa" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window">Position to window</a> -->
+<!--upload start-->
+  <div class="upload_box">
+ <div class="ui-grid-a">
+ <div class="ui-block-a" style="width:15%;">
+<div class="upload" id="mulitplefileuploader">
+      
+
+
+    </div>
+    </div>
+    </div>
+</div>
+<!-- <div id="status"></div> -->
+<!--upload end-->
+
+
 <div style="margin-top:50px;margin-left:50px;margin-right:50px ">
 <a href="" class="txt-dec">  <input type="button" value="SEARCH NEARBY LOCATION" style="border: solid 2px #00BBD3;opacity: inherit; border-radius: 0px;" id="" > </a>
 </div>
-
 
 </div>
 </div>

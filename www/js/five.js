@@ -66,6 +66,7 @@
 				 ff = employimg_obj.patient_id;
 					
 					}
+
 		//alert(ff+'patient_idxgcdrfs');
 
 			
@@ -147,6 +148,7 @@ var div_val='<div class="row" style="background-color: #ebebeb; height: 70px;   
 			$("#shift").val(JSON.parse(sessionStorage.getItem("shift")));*/
 			
 			$("#user_id").val(ff);
+			sessionStorage.setItem("userobject_lastid",JSON.stringify($("#user_id").val()));
 			//alert(ff+'ff');
 			//alert('readvalues success')
 			
@@ -158,8 +160,6 @@ var div_val='<div class="row" style="background-color: #ebebeb; height: 70px;   
 
 		
 		
-	
-
 
 		
 
