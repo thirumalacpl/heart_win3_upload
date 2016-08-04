@@ -45,6 +45,8 @@ $.ajax({
     
  
      document.getElementById('pat_name').value = '';
+      document.getElementById('mob_no').value = '';
+      document.getElementById('age_n').value='';
 
 $.mobile.loading().hide();
 $.mobile.changePage($('#question_li'), { transition: "none", changeHash: true, reverse: false });
