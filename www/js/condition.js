@@ -25,10 +25,11 @@ $.ajax({url: 'http://staging.eimpressive.com/slim/slim-heart-mergedb/indextest.p
            sessionStorage.setItem("activities_details_arrayaa",JSON.stringify(result[2]));*/
 
            sessionStorage.setItem("user_data",JSON.stringify(result[1]));
-                            sessionStorage.setItem("plant_data",JSON.stringify(result[2]));
+              sessionStorage.setItem("plant_data",JSON.stringify(result[2]));
                             //alert(sessionStorage.getItem("plant_data"));
               sessionStorage.setItem("categories_details_array",JSON.stringify(result[3]));
               sessionStorage.setItem("activities_details_arrayaa",JSON.stringify(result[4]));
+               sessionStorage.setItem("emergency","1");
 
 $.mobile.loading().hide();
 $.mobile.changePage($('#cond_patient_details'), { transition: "none", changeHash: true, reverse: false });

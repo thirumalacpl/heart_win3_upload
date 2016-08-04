@@ -29,6 +29,7 @@ $.ajax({
     console.log('searchlpa ' +result);
     if(result[0]){
       $("#popupsearchmade").popup("open");
+
 //alert('Data available for the search made');
 
        sessionStorage.setItem("patient_detaias_array",JSON.stringify(result[0]));

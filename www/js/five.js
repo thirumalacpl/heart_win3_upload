@@ -1,7 +1,7 @@
 // JavaScript Document
 
 	//$(document).one('pagecreate', '#page_five', function(){  
-		$(document).one('pageshow', '#question_li', function(){ 
+		$(document).one('pagecreate', '#question_li', function(){ 
 	
 /*	userobject_lastid =  JSON.parse(sessionStorage.getItem("userobject_lastid"));
 			
@@ -139,7 +139,14 @@ var div_val='<div class="row" style="background-color: #ebebeb; height: 70px;   
 			//var allvaluearray = new Array();
 			//alert('readvalues');
 			
-		
+				userobject = JSON.parse(sessionStorage.getItem("patient_detaias_array"));	
+			//alert(userobject);						
+		for(a=0;a<userobject.length;a++){
+
+  				employimg_obj = userobject[a];
+				 ff = employimg_obj.patient_id;
+					
+					}
 	category_array = 	JSON.parse(sessionStorage.getItem("categories_details_array"));	
 			activity_array = 	JSON.parse(sessionStorage.getItem("activities_details_arrayaa"));		
 			var act_val="";
