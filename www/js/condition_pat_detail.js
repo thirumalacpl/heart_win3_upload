@@ -1,5 +1,13 @@
 $(document).on('pageshow', '#cond_patient_details', function(){ 
 
+//alert('ASD');
+
+condition_emer =  JSON.parse(sessionStorage.getItem("emergency")); 
+
+
+//alert(condition_emer+'condition');
+
+
 	$(document).off('click', '#pate_enter_but').on('click', '#pate_enter_but', function() {
 //alert('condition emergency but clcik');
 
@@ -15,7 +23,7 @@ $(document).on('pageshow', '#cond_patient_details', function(){
   alert(mob_no+'mob_no');*/
 if(pat_name != ""){
 $.ajax({
-  url: "http://staging.eimpressive.com/slim/slim-heart-mergedb/pat_detai_inser.php?pat_name="+pat_name+"&age_nn="+age_nn+"&gender_d="+gender_d+"&mob_no="+mob_no,
+  url: "http://staging.eimpressive.com/slim/slim-heart-mergedb/pat_detai_inser.php?pat_name="+pat_name+"&age_nn="+age_nn+"&gender_d="+gender_d+"&mob_no="+mob_no+"&condition_emer="+condition_emer,
   data:$('#pat_detai').serialize(),
   type: 'post',                   
   async: 'true',
